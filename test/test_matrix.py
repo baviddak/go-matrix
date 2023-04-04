@@ -6,9 +6,9 @@ import requests
 def test_matrix_multiplier():
 
     # import the matrix files
-    with open("matrix_a.json") as f:
+    with open("test/matrix_a.json") as f:
         matrix_a = json.load(f)
-    with open("matrix_b.json") as f:
+    with open("test/matrix_b.json") as f:
         matrix_b = json.load(f)
 
     # set up the request
