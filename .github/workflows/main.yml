@@ -1,0 +1,21 @@
+name: 'Build and Test Go server application'
+on: [push]
+
+jobs:
+  build-test:
+    runs-on: golang:1.20.2-buster
+    steps:
+      - run: echo "Automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "Job is now running on a ${{ runner.os }} server."
+      - run: echo "Testing on branch ${{ github.ref }}."
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: sudo apt-get update && sudo apt-get install -y locales && sudo apt-get install gcc-10-base -y && sudo apt-get install python3 -y && sudo apt-get install python3-pip -y
+      - run: go run matrix.go &
+      - run: pip install pytest
+      - run: cd test
+      - run: pytest
