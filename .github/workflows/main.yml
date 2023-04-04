@@ -32,4 +32,4 @@ jobs:
       - run: sudo go run matrix.go &
       - run: pip install pytest
       - run: cd test
-      - run: sudo pytest
+      - run: pytest
