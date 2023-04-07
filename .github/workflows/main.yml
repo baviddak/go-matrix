@@ -1,4 +1,4 @@
-name: 'Build and Test Go server application'
+name: 'Build and Test Go Server application'
 on: [push]
 
 jobs:
