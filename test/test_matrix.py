@@ -17,7 +17,7 @@ def test_matrix_multiplier():
     j_request.append(matrix_b)
     
     # send matrixes
-    r = requests.get('http://127.0.0.1:8097/multi', data=json.dumps(j_request))
+    r = requests.get('http://127.0.0.1:8099/multi', data=json.dumps(j_request))
     
     # assert the response
     print(f"The response is {r.text}")
