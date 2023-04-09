@@ -30,5 +30,7 @@ jobs:
           echo "/usr/local/go/bin" >> $GITHUB_PATH
           go version
       - run: pip install pytest
-      - run: go run matrix.go &
+      - run: go build matrix.go
+      - run: ./matrix &
+      - run: echo "Server now running"
       - run: pytest -s
